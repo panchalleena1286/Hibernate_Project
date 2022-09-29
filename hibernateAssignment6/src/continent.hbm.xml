@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping>
+		<class name="com.map.Continent" table="continent">
+			<id name="continentId" column="continentId">
+				<generator class="increment"/>	
+			</id>
+			<property name="continentName" />
+			<map name="countries" table="countryCapitalMapping">
+				<key column="continentId"></key>
+				<index column="continentId" type="String"></index>
+				<element column="countryName" type="String"></element>
+			</map>
+			
+		</class>
+		
+	</hibernate-mapping>
